@@ -1,0 +1,18 @@
+<button (click)="addRow()">Add Row</button>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of userData">
+      <td contenteditable="true">{{ user.id }}</td>
+      <td contenteditable="true">{{ user.name }}</td>
+      <td contenteditable="true">{{ user.email }}</td>
+    </tr>
+  </tbody>
+</table>
