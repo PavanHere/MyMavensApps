@@ -1,0 +1,21 @@
+<p-table [value]="userData">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Add</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-userData let-i="rowIndex">
+    <tr>
+      <td pEditableColumn>{{ userData.id }}</td>
+      <td pEditableColumn>{{ userData.name }}</td>
+      <td pEditableColumn>{{ userData.email }}</td>
+      <td *ngIf="i === userData.length - 1">
+        <button pButton type="button" (click)="addRow()">Add</button>
+      </td>
+      <td *ngIf="i !== userData.length - 1"></td>
+    </tr>
+  </ng-template>
+</p-table>
