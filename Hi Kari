@@ -6,3 +6,13 @@ spring.datasource.password=mypassword
 # Connection pool properties
 spring.datasource.hikari.idle-timeout=60000 # Maximum time that a connection is allowed to sit idle in the pool
 spring.datasource.hikari.max-lifetime=1800000 # Maximum lifetime of a connection in the pool
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/mydatabase
+    username: myusername
+    password: mypassword
+    hikari:
+      idle-timeout: 60000 # Maximum time that a connection is allowed to sit idle in the pool
+      max-lifetime: 1800000 # Maximum lifetime of a connection in the pool
+
