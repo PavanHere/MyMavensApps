@@ -26,4 +26,11 @@ WHERE SomeColumn IN (
     SELECT value
     FROM STRING_SPLIT((SELECT CommaSeparatedColumn FROM Table1), ',')
 )
+SELECT *
+FROM Table2
+WHERE ',' + (
+    SELECT CommaSeparatedColumn
+    FROM Table1
+) + ',' LIKE '%,' + ColumnToMatch + ',%'
+
 
