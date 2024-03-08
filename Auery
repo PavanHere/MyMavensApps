@@ -1,0 +1,5 @@
+SELECT *
+FROM Table2
+WHERE CONCAT(',', (SELECT CommaSeparatedColumn FROM Table1 WHERE YourCriteria = 'YourValue'), ',') LIKE CONCAT('%,', ColumnToMatch, ',%')
+@Query(value = "SELECT t2 FROM Table2 t2 WHERE CONCAT(',', (SELECT t1.CommaSeparatedColumn FROM Table1 t1 WHERE t1.YourCriteria = 'YourValue'), ',') LIKE CONCAT('%,', :columnToMatch, ',%')", nativeQuery = true)
+List<Table2> findByCommaSeparatedColumn(@Param("columnToMatch") String columnToMatch);
