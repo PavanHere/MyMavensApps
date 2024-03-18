@@ -1,0 +1,21 @@
+import com.fasterxml.jackson.databind.ObjectMapper;
+import java.util.Map;
+
+public class Main {
+    public static void main(String[] args) {
+        String inputString = "{name:pawan}";
+
+        // Convert string to Map
+        inputString = inputString.replaceAll("(\\w+)", "\"$1\"");
+        
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            Map<String, Object> jsonMap = objectMapper.readValue(inputString, Map.class);
+            // Now you have a Map<String, Object>, you can convert it back to JSON if needed
+            String jsonString = objectMapper.writeValueAsString(jsonMap);
+            System.out.println(jsonString);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
