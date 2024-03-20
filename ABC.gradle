@@ -1,1 +1,14 @@
 
+dependencies {
+    // Spring Core
+    implementation 'org.springframework:spring-core:5.3.10'
+
+    // Spring JDBC
+    implementation 'org.springframework:spring-jdbc:5.3.10'
+
+    // Spring AOP
+    implementation 'org.springframework:spring-aop:5.3.10'
+
+    // AspectJ Weaver (for load-time weaving)
+    implementation 'org.aspectj:aspectjweaver:1.9.7'
+}
