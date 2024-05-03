@@ -1,0 +1,86 @@
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import java.util.Arrays;
+import java.util.List;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.ArgumentMatchers.*;
+import static org.mockito.Mockito.*;
+
+public class CallLogVerificationDaoImplTest {
+
+    @Mock
+    private DatabaseOperationHandler mockDatabaseOperationHandler;
+
+    private CallLogVerificationDaoImpl callLogVerificationDao;
+
+    @BeforeEach
+    public void setUp() {
+        MockitoAnnotations.initMocks(this);
+        callLogVerificationDao = new CallLogVerificationDaoImpl(mockDatabaseOperationHandler);
+    }
+
+    @Test
+    public void testGetCallLogCount() {
+        // Prepare test data
+        CollectionDetailsRequest request = new CollectionDetailsRequest(/* provide necessary parameters */);
+        CallLogCountDetails expectedDetails = new CallLogCountDetails(/* provide expected details */);
+
+        // Mock database operation handler behavior
+        when(mockDatabaseOperationHandler.executeReadStoredProcedure(anyString(), any(Object[].class), any(CallLogCountMapper.class)))
+            .thenReturn(Arrays.asList(expectedDetails));
+
+        // Call the method under test
+        CallLogCountDetails result = callLogVerificationDao.getCallLogCount(request);
+
+        // Verify interactions
+        verify(mockDatabaseOperationHandler).executeReadStoredProcedure(eq(StoredProcConstants.CALL_SP_VAS_CALL_LOG_VERIFICATION_CNTS_2),
+            any(Object[].class), any(CallLogCountMapper.class));
+
+        // Verify result
+        assertEquals(expectedDetails, result);
+    }
+
+    @Test
+    public void testGetCallLogVerificationDetails() {
+        // Prepare test data
+        CollectionDetailsRequest request = new CollectionDetailsRequest(/* provide necessary parameters */);
+        List<CallLogVerificationDetails> expectedDetails = Arrays.asList(/* provide expected details */);
+
+        // Mock database operation handler behavior
+        when(mockDatabaseOperationHandler.executeReadStoredProcedure(anyString(), any(Object[].class), any(CallLogVerificationMapper.class)))
+            .thenReturn(expectedDetails);
+
+        // Call the method under test
+        List<CallLogVerificationDetails> result = callLogVerificationDao.getCallLogVerificationDetails(request);
+
+        // Verify interactions
+        verify(mockDatabaseOperationHandler).executeReadStoredProcedure(eq(StoredProcConstants.CALL_SP_VAS_CALL_LOG_VERIFICATION),
+            any(Object[].class), any(CallLogVerificationMapper.class));
+
+        // Verify result
+        assertEquals(expectedDetails, result);
+    }
+
+    @Test
+    public void testGetCallLogAuditDetails() {
+        // Prepare test data
+        CollectionDetailsRequest request = new CollectionDetailsRequest(/* provide necessary parameters */);
+        List<CallLogAuditDetails> expectedDetails = Arrays.asList(/* provide expected details */);
+
+        // Mock database operation handler behavior
+        when(mockDatabaseOperationHandler.executeReadStoredProcedure(anyString(), any(Object[].class), any(CallLogAuditDetailsMapper.class)))
+            .thenReturn(expectedDetails);
+
+        // Call the method under test
+        List<CallLogAuditDetails> result = callLogVerificationDao.getCallLogAuditDetails(request);
+
+        // Verify interactions
+        verify(mockDatabaseOperationHandler).executeReadStoredProcedure(eq(StoredProcConstants.CALL_SP_VAS_CALL_LOG_VERIFICATION_CNTS),
+            any(Object[].class), any(CallLogAuditDetailsMapper.class));
+
+        // Verify result
+        assertEquals(expectedDetails, result);
+    }
+}
