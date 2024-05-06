@@ -1,0 +1,40 @@
+const AWS = require('aws-sdk');
+// Set your AWS credentials and region
+AWS.config.update({
+    accessKeyId: 'AKIAQWVE3PEXWNMIDMEI',
+    secretAccessKey: '2pi39uJU6TULa7Ht6jGh1hUmP6pYGjtns6oUC/V6',
+    region: 'us-east-2'
+  });
+
+// Create an EventBridge instance with the specific event bus ARN
+const eventBridge = new AWS.EventBridge({
+
+eventBusArn: 'arn:aws:events:us-east-2:048664115503:event-bus/MyEventBus'
+});
+
+// Define the event details
+const eventDetails = {
+  Source: 'custom.myApp',
+  DetailType: 'myCustomEventType',
+  Detail: JSON.stringify({ key1: 'value1', key2: 'value2' })
+};
+
+// Construct the params object
+const params = {
+  Entries: [
+    {
+      Source: eventDetails.Source,
+      DetailType: eventDetails.DetailType,
+      Detail: eventDetails.Detail
+    }
+  ]
+};
+
+// Send the event to EventBridge
+eventBridge.putEvents(params, function(err, data) {
+  if (err) {
+    console.error('Failed to send event to EventBridge:', err);
+  } else {
+    console.log('Event sent successfully:', data);
+  }
+});
