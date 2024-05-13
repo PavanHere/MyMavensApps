@@ -1,0 +1,5 @@
+<div *ngFor="let affidavit of affidavits">
+  <p-dropdown [(ngModel)]="affidavit.affidavitType" [options]="affidavitTypes" optionLabel="label"></p-dropdown>
+  <p-dropdown [(ngModel)]="affidavit.affidavitName" [options]="affidavitNames" optionLabel="label"></p-dropdown>
+  <p-dropdown [(ngModel)]="affidavit.notary" [options]="notaries" optionLabel="label"></p-dropdown>
+</div>
