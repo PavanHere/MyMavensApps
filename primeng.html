@@ -1,3 +1,51 @@
+Step 1: Install PrimeNG
+First, make sure you have PrimeNG installed in your project. You can install it using npm:
+
+bash
+Copy code
+npm install primeng --save
+npm install primeicons --save
+npm install @angular/cdk --save
+Step 2: Import PrimeNG Modules
+Import the necessary PrimeNG modules into your AppModule.
+
+app.module.ts
+typescript
+Copy code
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { DropdownModule } from 'primeng/dropdown';
+import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button';
+
+import { AppComponent } from './app.component';
+import { AffidavitListComponent } from './affidavit-list/affidavit-list.component'; // Adjust the path as needed
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    AffidavitListComponent
+  ],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    FormsModule,
+    DropdownModule,
+    InputTextModule,
+    ButtonModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+Step 3: Define Models
+Use the same models as before:
+
+affidavit.model.ts
+typescript
+Copy code
 export interface Affidavit {
   affidavitType: string | null;
   affidavitName: string | null;
@@ -13,7 +61,7 @@ export interface ServerAffidavit {
   extraValue1: string | null;
   extraValue2: string | null;
 }
-Step 2: Create Service
+Step 4: Create Service
 Create a service to fetch data from a mock endpoint.
 
 affidavit.service.ts
@@ -42,8 +90,8 @@ export class AffidavitService {
     );
   }
 }
-Step 3: Component Template
-Create the component template to include the form and bind the values.
+Step 5: Component Template
+Use PrimeNG components in the form template.
 
 affidavit-list.component.html
 html
@@ -51,38 +99,50 @@ Copy code
 <form (ngSubmit)="onSubmit()">
   <div>
     <h3>Affidavit Types</h3>
-    <select [(ngModel)]="selectedAffidavit.affidavitType" name="affidavitType" required>
-      <option *ngFor="let type of affidavitTypes" [value]="type">{{ type }}</option>
-    </select>
+    <p-dropdown 
+      [options]="affidavitTypes" 
+      [(ngModel)]="selectedAffidavit.affidavitType" 
+      name="affidavitType" 
+      placeholder="Select a type" 
+      required>
+    </p-dropdown>
   </div>
 
   <div>
     <h3>Affidavit Names</h3>
-    <select [(ngModel)]="selectedAffidavit.affidavitName" name="affidavitName" required>
-      <option *ngFor="let name of affidavitNames" [value]="name">{{ name }}</option>
-    </select>
+    <p-dropdown 
+      [options]="affidavitNames" 
+      [(ngModel)]="selectedAffidavit.affidavitName" 
+      name="affidavitName" 
+      placeholder="Select a name" 
+      required>
+    </p-dropdown>
   </div>
 
   <div>
     <h3>Notaries</h3>
-    <select [(ngModel)]="selectedAffidavit.notary" name="notary" required>
-      <option *ngFor="let notary of notaries" [value]="notary">{{ notary }}</option>
-    </select>
+    <p-dropdown 
+      [options]="notaries" 
+      [(ngModel)]="selectedAffidavit.notary" 
+      name="notary" 
+      placeholder="Select a notary" 
+      required>
+    </p-dropdown>
   </div>
 
   <div>
     <h3>Extra Values</h3>
     <label for="extraField1">Extra Field 1:</label>
-    <input type="text" id="extraField1" [(ngModel)]="extraValue1" name="extraField1">
+    <input pInputText id="extraField1" [(ngModel)]="extraValue1" name="extraField1">
     
     <label for="extraField2">Extra Field 2:</label>
-    <input type="text" id="extraField2" [(ngModel)]="extraValue2" name="extraField2">
+    <input pInputText id="extraField2" [(ngModel)]="extraValue2" name="extraField2">
   </div>
 
-  <button type="submit">Submit</button>
+  <button pButton type="submit" label="Submit"></button>
 </form>
-Step 4: Component Logic
-Create the component to handle form submission and data fetching.
+Step 6: Component Logic
+Fetch data and handle form submission.
 
 affidavit-list.component.ts
 typescript
@@ -99,9 +159,9 @@ import { AffidavitService } from './affidavit.service';
   styleUrls: ['./affidavit-list.component.css']
 })
 export class AffidavitListComponent implements OnInit {
-  affidavitTypes: string[] = [];
-  affidavitNames: string[] = [];
-  notaries: string[] = [];
+  affidavitTypes: { label: string, value: string }[] = [];
+  affidavitNames: { label: string, value: string }[] = [];
+  notaries: { label: string, value: string }[] = [];
   selectedAffidavit: Affidavit = {
     affidavitType: null,
     affidavitName: null,
@@ -119,9 +179,12 @@ export class AffidavitListComponent implements OnInit {
 
   ngOnInit(): void {
     this.affidavitService.getAffidavits().subscribe((data: Affidavit[]) => {
-      this.affidavitTypes = [...new Set(data.map(item => item.affidavitType).filter(type => type !== null))];
-      this.affidavitNames = [...new Set(data.map(item => item.affidavitName).filter(name => name !== null))];
-      this.notaries = [...new Set(data.map(item => item.notary).filter(notary => notary !== null))];
+      this.affidavitTypes = [...new Set(data.map(item => ({ label: item.affidavitType, value: item.affidavitType })))]
+        .filter(type => type.label !== null);
+      this.affidavitNames = [...new Set(data.map(item => ({ label: item.affidavitName, value: item.affidavitName })))]
+        .filter(name => name.label !== null);
+      this.notaries = [...new Set(data.map(item => ({ label: item.notary, value: item.notary })))]
+        .filter(notary => notary.label !== null);
     });
   }
 
@@ -139,31 +202,24 @@ export class AffidavitListComponent implements OnInit {
     });
   }
 }
-Step 5: App Module
-Ensure that HttpClientModule and FormsModule are imported in your AppModule.
+Explanation
+PrimeNG Components:
 
-app.module.ts
-typescript
-Copy code
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+p-dropdown for dropdowns.
+pInputText for text inputs.
+pButton for the submit button.
+Data Fetching:
 
-import { AppComponent } from './app.component';
-import { AffidavitListComponent } from './affidavit-list/affidavit-list.component'; // Adjust the path as needed
+Use the AffidavitService to fetch affidavit data.
+Transform the fetched data into the format expected by p-dropdown (i.e., { label: string, value: string }).
+Form Submission:
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    AffidavitListComponent
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    FormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
+Collect form data and extra values.
+Map the data to the ServerAffidavit model.
+Submit the data to the server using HttpClient.
+This setup leverages PrimeNG components to create a more polished user interface. Adjust the models, form elements, and server endpoint as needed based on your specific requirements.
+
+
+
+
+
