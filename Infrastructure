@@ -1,0 +1,15 @@
+Here are Big Picture Thinking points for Web Developers working on Infrastructure Applications, incorporating your experience with Java, Angular, Spring Boot, OpenShift, and an in-house pipeline:
+
+Big Picture Thinking - Proficient (Web Development in Infrastructure Applications)
+	1.	Full-Stack Application Deployment – Designs and deploys web applications efficiently within OpenShift environments, ensuring seamless integration with infrastructure components.
+	2.	Optimized API & Backend Performance – Develops scalable and high-performance APIs in Spring Boot, ensuring efficient communication with infrastructure services and databases.
+	3.	Frontend-Backend Interaction in Cloud Environments – Ensures Angular applications interact efficiently with backend services through secure APIs, optimized caching, and cloud-native best practices.
+	4.	Security-First Development – Implements authentication and authorization (OAuth, JWT, SSO) while ensuring security compliance with infrastructure policies and secure DevOps pipelines.
+	5.	Infrastructure-Aware Web Development – Develops applications with awareness of cloud-native constraints, optimizing for containerization, microservices, and service mesh architectures.
+	6.	CI/CD Integration for Web Applications – Works with an in-house pipeline to automate testing, builds, and deployments, reducing manual effort and improving release cycles.
+	7.	Observability & Logging – Ensures web applications integrate seamlessly with logging (ELK, OpenTelemetry) and monitoring tools (Prometheus, Grafana) for real-time visibility.
+	8.	Scalability & Load Management – Designs applications with horizontal scaling in mind, leveraging load balancers and caching (Redis, CDN) to handle high traffic efficiently.
+	9.	Automated Testing & Quality Assurance – Implements unit, integration, and performance testing in the CI/CD pipeline to maintain code quality and application reliability.
+	10.	Collaboration with Infrastructure & DevOps Teams – Works closely with infrastructure engineers to optimize deployments, troubleshoot environment-specific issues, and ensure application stability.
+
+Would you like any refinements or additions based on
