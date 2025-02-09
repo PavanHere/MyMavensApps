@@ -1,0 +1,15 @@
+Here are proficiency-related points for Inner Source Applications in your role as a Web Developer working with Java, Angular, Spring Boot, OpenShift, and an in-house pipeline:
+
+Proficiency in Inner Source Applications
+	1.	Collaborative Development Practices – Follows Inner Source principles by contributing reusable, well-documented components and services that benefit multiple teams across the organization.
+	2.	Code Reusability & Modularization – Develops modular, reusable libraries and frameworks in Java and Angular to streamline development across different applications.
+	3.	Standardized API & Service Design – Ensures consistency in API structures, documentation, and versioning to support seamless integration across Inner Source projects.
+	4.	Inner Source Repository Management – Maintains and contributes to shared repositories, ensuring clear documentation, standardized branching strategies, and best coding practices.
+	5.	CI/CD Integration for Inner Source Components – Automates testing, security scans, and deployment of shared components within the in-house pipeline to maintain code quality and reliability.
+	6.	Security & Compliance in Shared Codebases – Enforces security best practices such as dependency scanning, access control, and code reviews to maintain compliance across all Inner Source contributions.
+	7.	Observability & Debugging Support – Implements centralized logging, monitoring, and debugging tools to enhance visibility and maintainability of shared components.
+	8.	Scalability & Performance Optimization – Designs Inner Source components with scalability in mind, ensuring they perform well across multiple teams and applications.
+	9.	Governance & Contribution Guidelines – Establishes clear contribution guidelines, pull request processes, and review standards to ensure high-quality, maintainable Inner Source codebases.
+	10.	Cross-Team Collaboration & Knowledge Sharing – Engages with multiple teams to promote adoption of Inner Source components, gather feedback, and improve shared assets continuously.
+
+Would you like to focus on specific aspects like governance, adoption, or technical contributions?
