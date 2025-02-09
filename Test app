@@ -1,0 +1,22 @@
+Here are proficiency-related testing points tailored to your applications, which include collection and recovery activities, auditing external vendors, security, and infrastructure applications:
+
+Proficiency in Testing for Your Applications
+
+1. Backend Testing (Cucumber & Serenity)
+	•	Auditing & Compliance Validation – Uses Cucumber and Serenity to automate audit workflows, ensuring external vendor activities comply with regulatory and business rules.
+	•	Collection & Recovery Data Validation – Tests backend logic for transaction accuracy, account reconciliation, and case management workflows.
+	•	Security & Access Control Testing – Ensures role-based access control (RBAC) and authentication mechanisms function correctly across different user roles.
+	•	API Contract & Integration Testing – Automates REST API tests to validate integrations with payment gateways, notification systems, and internal services.
+
+2. Frontend Testing (Jest for Angular Applications)
+	•	User Journey Validation – Uses Jest to validate user interactions for internal auditors reviewing vendor activities and collection agents handling recovery cases.
+	•	Component-Level Testing – Ensures reusable Angular components (e.g., dashboards, reporting tools, and input forms) function as expected across different applications.
+	•	Error Handling & UI Security Tests – Tests user permissions, session handling, and secure data rendering for compliance and security applications.
+
+3. Infrastructure & DevOps Testing
+	•	CI/CD Pipeline Test Automation – Integrates Jest, Cucumber, and Serenity into the in-house CI/CD pipeline to ensure test execution before deployments.
+	•	Performance & Load Testing – Simulates high traffic to verify that collection and auditing applications handle large volumes of transactions efficiently.
+	•	Observability & Monitoring Tests – Validates logging mechanisms (ELK, OpenTelemetry) and security alert triggers for compliance and security applications.
+
+4. Security & Compliance Testing
+	•	Audit Trail Verification – Tests audit logs and event tracking to ensure data integrity and regulatory compliance in vendor audits and recovery case management.
