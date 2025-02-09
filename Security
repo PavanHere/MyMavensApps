@@ -1,0 +1,15 @@
+Here are proficiency-related points for Security Applications in your role as a Web Developer working with Java, Angular, Spring Boot, OpenShift, and an in-house pipeline:
+
+Proficiency in Security Applications
+	1.	Authentication & Authorization Implementation – Develops secure authentication mechanisms using OAuth 2.0, OpenID Connect, JWT, and role-based access control (RBAC).
+	2.	Secure API Development – Ensures APIs follow best security practices, including input validation, encryption, rate limiting, and proper access controls to prevent vulnerabilities.
+	3.	Identity & Access Management (IAM) – Integrates with IAM solutions for user provisioning, multi-factor authentication (MFA), and single sign-on (SSO).
+	4.	Data Encryption & Protection – Implements encryption (AES, RSA, TLS) for sensitive data in transit and at rest, ensuring compliance with industry standards.
+	5.	Security Logging & Monitoring – Integrates with SIEM tools, centralized logging systems (ELK, OpenTelemetry), and monitoring solutions to detect and prevent security incidents.
+	6.	Threat Detection & Anomaly Monitoring – Develops applications with real-time anomaly detection mechanisms to identify suspicious activity and potential breaches.
+	7.	Compliance & Regulatory Adherence – Ensures security applications align with industry standards like PCI-DSS, GDPR, SOC 2, and internal organizational policies.
+	8.	Secure DevOps (DevSecOps) Practices – Embeds security checks in CI/CD pipelines, including automated security scans, vulnerability assessments, and dependency management.
+	9.	Application Hardening & Penetration Testing – Implements secure coding practices, regular security assessments, and penetration testing to reduce risks.
+	10.	Incident Response & Forensics – Builds audit trails, forensic logging, and alerting mechanisms to help teams quickly detect, analyze, and respond to security incidents.
+
+Would you like any refinements based on your specific security application use cases?
