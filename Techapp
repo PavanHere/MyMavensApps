@@ -1,0 +1,15 @@
+Here are proficiency-related points for Technology Applications in your role as a Web Developer working with Java, Angular, Spring Boot, OpenShift, and an in-house pipeline:
+
+Proficiency in Technology Applications
+	1.	Scalable & High-Performance Architecture – Designs applications with a scalable, cloud-native approach, leveraging microservices, containerization, and efficient data processing.
+	2.	Modern Web Development Best Practices – Develops interactive and responsive front-end applications using Angular while ensuring optimal performance and accessibility.
+	3.	Efficient Backend Development – Implements well-structured APIs and backend logic in Spring Boot, ensuring security, performance, and maintainability.
+	4.	CI/CD & Deployment Automation – Integrates applications with an in-house CI/CD pipeline, automating builds, testing, and deployments for efficient release cycles.
+	5.	Security & Compliance – Implements secure authentication, access controls, encryption, and best practices to protect applications from vulnerabilities and ensure compliance with security standards.
+	6.	Observability & Monitoring – Incorporates centralized logging (ELK, OpenTelemetry) and monitoring tools (Prometheus, Grafana) to provide real-time application health insights.
+	7.	Cloud-Native & Infrastructure Awareness – Ensures applications are optimized for OpenShift deployments, using Kubernetes configurations and Helm charts for efficient resource management.
+	8.	Data Management & Optimization – Designs applications with efficient data storage, indexing, and retrieval mechanisms, ensuring scalability and minimal latency.
+	9.	Cross-Team Collaboration & Inner Source Contributions – Works in an Inner Source model, sharing reusable components and collaborating across teams to enhance application development.
+	10.	Continuous Improvement & Emerging Tech Adoption – Stays updated with the latest advancements in frameworks, cloud technologies, and security practices to enhance application performance and reliability.
+
+Would you like to emphasize specific aspects based on the technology focus of your applications?
