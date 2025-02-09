@@ -1,0 +1,15 @@
+Here are key points related to infrastructure applications in your role as a Web Developer working with Java, Angular, Spring Boot, OpenShift, and an in-house pipeline:
+
+Infrastructure Application Considerations for Web Development
+	1.	Cloud-Native Web Application Deployment – Deploys web applications on OpenShift using containerized environments, ensuring seamless scalability and resource optimization.
+	2.	Infrastructure-Aware Development – Designs applications with awareness of infrastructure constraints, ensuring compatibility with load balancers, service discovery, and distributed systems.
+	3.	Microservices Integration – Develops backend services in Spring Boot that work efficiently within a microservices architecture, leveraging API gateways, service mesh, and inter-service communication patterns.
+	4.	CI/CD Pipeline Efficiency – Works within an in-house CI/CD pipeline to automate testing, builds, and deployments, ensuring consistent and reliable releases.
+	5.	Security & Access Management – Implements secure authentication and authorization mechanisms (OAuth, JWT, SSO) while ensuring compliance with infrastructure security policies.
+	6.	Logging & Monitoring Integration – Ensures web applications are integrated with centralized logging (ELK, OpenTelemetry) and monitoring tools (Prometheus, Grafana) for better observability and troubleshooting.
+	7.	Optimized API Performance – Designs APIs to handle high loads efficiently using caching strategies (Redis, CDN), pagination, and rate-limiting techniques.
+	8.	Infrastructure as Code (IaC) Awareness – Works with DevOps teams to define Helm charts, Kubernetes configurations, and deployment manifests to ensure infrastructure consistency.
+	9.	Disaster Recovery & Fault Tolerance – Ensures applications support failover mechanisms, backup strategies, and automated scaling to maintain high availability in production environments.
+	10.	Collaboration with DevOps & Infrastructure Teams – Works closely with infrastructure engineers to optimize deployments, troubleshoot environment-specific issues, and ensure seamless integration between applications and infrastructure.
+
+Would you like me to tailor these further to a
